@@ -32,8 +32,11 @@
     "axios": "^0.25.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "@nestjs/cli": "^8.0.0",
+    "ts-node": "^10.0.0"
   },
+  "@nestjs/cli": "^8.0.0",
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
