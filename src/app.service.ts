@@ -8,6 +8,8 @@ export class AppService {
     date = new Date(date.setDate(date.getDate() - 30));
     const dolarInfo = await this.getDollar();
 
+    if (!page) page = 1;
+
     try {
       const result = await axios.get(
         `https://challenge-api.aerolab.co/products?page=${page}`,
@@ -48,7 +50,7 @@ export class AppService {
     result.data.categories.forEach(function (item) {
       var id = item.id;
       if (!mappedArr.hasOwnProperty(id)) {
-        mappedArr[id] = item; 
+        mappedArr[id] = item;
         mappedArr[id].subcategories = [];
       }
     });
@@ -60,9 +62,7 @@ export class AppService {
         if (mappedElem.parent_id) {
           var parentId = mappedElem.parent_id;
           mappedArr[parentId].subcategories.push(mappedElem);
-        }
-
-        else {
+        } else {
           tree.push(mappedElem);
         }
       }
